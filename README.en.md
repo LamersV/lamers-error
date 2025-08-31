@@ -4,10 +4,6 @@ Small TypeScript package to standardize error handling in Node/TS applications. 
 
 The goal is to enable consistent logging, user-friendly messages, and predictable HTTP responses in Express/HTTP APIs. The source code is written in TypeScript and the published package exposes the compiled output under `dist`. The distribution follows an exports map for the main module and also for direct imports of specific modules and types.
 
-Repository: https://github.com/LamersV/lamers-error  
-Homepage: https://github.com/LamersV/lamers-error#readme  
-Version: 1.0.0
-
 ## Installation
 
 This package is published on GitHub Packages under the `@lamersv` scope. Configure your `.npmrc` pointing to the GitHub registry:

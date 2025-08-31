@@ -4,10 +4,6 @@ Pequeno pacote em TypeScript para padronizar tratamento de erros em aplicações
 
 O objetivo é facilitar logs consistentes, mensagens amigáveis para o usuário e respostas HTTP previsíveis em APIs Express/HTTP. O código-fonte está em TypeScript e a publicação expõe a saída compilada em `dist`. A distribuição segue um mapa de exports para o módulo principal e também para importação direta de módulos e tipos específicos.
 
-Repositório: https://github.com/LamersV/lamers-error  
-Homepage: https://github.com/LamersV/lamers-error#readme  
-Versão: 1.0.0
-
 ## Instalação
 
 Este pacote é publicado no GitHub Packages sob o escopo `@lamersv`. Configure seu `.npmrc` apontando para o registro do GitHub:
