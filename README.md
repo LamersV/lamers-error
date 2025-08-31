@@ -31,8 +31,8 @@ pnpm add @lamersv/error
 A biblioteca exporta:
 
 - `CustomError`: classe base com campos estruturados (`code`, `type`, `status`, `userMessage`, `data`, `cause`) e utilidades estáticas (`is`, `from`).
-- `WarnError` (4xx) e subclasses: `BadRequestWarn`, `UnauthorizedWarn`, `ForbiddenWarn`, `NotFoundWarn`, `ConflictWarn`, `ValidationWarn`, `TooManyRequestsWarn`, `UnknownRouteWarn`.
-- `ExceptionError` (5xx) e subclasses: `InternalServerError`, `DatabaseError`, `MailError`, `EncryptError`, `ConfigError`, `IntegrationError`, `TimeoutError`, `StorageError`, `NetworkError`, `LogError`, `MemoryError`.
+- `WarnError` (4xx) e subclasses: `BadRequestWarn`, `UnauthorizedWarn`, `ForbiddenWarn`, `NotFoundWarn`, `ConflictWarn`, `ValidationWarn`, `TooManyRequestsWarn`, `UnknownRouteWarn`, `AuthWarn`.
+- `ExceptionError` (5xx) e subclasses: `InternalServerError`, `DatabaseError`, `MailError`, `EncryptError`, `ConfigError`, `IntegrationError`, `TimeoutError`, `StorageError`, `NetworkError`, `LogError`, `MemoryError`, `AuthError`.
 - Tipos auxiliares como `CustomErrorType`, `UnknownError`, `HttpErrorBody<T>`, `HttpErrorResponse<T>` e convenções de código (`CustomErrorCode` aceitando padrões como `FOO_ERROR`/`FOO_WARN` ou livres).
 
 ## Uso básico
