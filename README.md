@@ -37,7 +37,6 @@ A biblioteca exporta:
 - `CustomError`: classe base com campos estruturados (`code`, `type`, `status`, `userMessage`, `data`, `cause`) e utilidades estáticas (`is`, `from`).
 - `WarnError` (4xx) e subclasses: `BadRequestWarn`, `UnauthorizedWarn`, `ForbiddenWarn`, `NotFoundWarn`, `ConflictWarn`, `ValidationWarn`, `TooManyRequestsWarn`, `UnknownRouteWarn`.
 - `ExceptionError` (5xx) e subclasses: `InternalServerError`, `DatabaseError`, `MailError`, `EncryptError`, `ConfigError`, `IntegrationError`, `TimeoutError`, `StorageError`, `NetworkError`, `LogError`, `MemoryError`.
-- Utilitário `normalizeErrorMessage` para padronizar mensagens.
 - Tipos auxiliares como `CustomErrorType`, `UnknownError`, `HttpErrorBody<T>`, `HttpErrorResponse<T>` e convenções de código (`CustomErrorCode` aceitando padrões como `FOO_ERROR`/`FOO_WARN` ou livres).
 
 ## Uso básico
@@ -52,7 +51,6 @@ import {
   ExceptionError,
   NotFoundWarn,
   InternalServerError,
-  normalizeErrorMessage,
   type UnknownError,
   type HttpErrorResponse,
 } from "@lamersv/error";
@@ -61,7 +59,6 @@ import {
 import { CustomError } from "@lamersv/error/modules/custom";
 import { WarnError, NotFoundWarn } from "@lamersv/error/modules/warn";
 import { ExceptionError, TimeoutError } from "@lamersv/error/modules/exception";
-import { normalizeErrorMessage } from "@lamersv/error/utils/normalize";
 ```
 
 ### Criando erros de cliente (4xx)
@@ -110,20 +107,12 @@ import { CustomError, type UnknownError } from "@lamersv/error";
 
 try {
   await fazAlgo();
-} catch (e: UnknownError) {
+} 
+catch (e: UnknownError) {
   const err = CustomError.from(e, { code: "SYSTEM_ERROR" });
   logger.error({ err });
   throw err;
 }
-```
-
-### Normalizando mensagens
-
-```ts
-import { normalizeErrorMessage } from "@lamersv/error";
-
-normalizeErrorMessage("  Falha   ao  salvar  "); // "Falha ao salvar"
-normalizeErrorMessage(null);                      // "Erro desconhecido"
 ```
 
 ## Integração com Express
