@@ -149,3 +149,16 @@ export class UnknownRouteWarn extends WarnError {
     });
   }
 }
+
+/** 500 Auth subsystem failure — falha na autenticação/validação de token. */
+export class AuthWarn extends WarnError {
+  constructor(message?: string, properties?: CustomErrorPartialProperties) {
+    const { data, userMessage } = properties ?? {};
+    super(message ?? "Erro de autenticação/validação de token", {
+      code: "AUTH_WARN",
+      status: 401,
+      userMessage,
+      data,
+    });
+  }
+}

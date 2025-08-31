@@ -186,3 +186,16 @@ export class MemoryError extends ExceptionError {
     });
   }
 }
+
+/** 500 Auth subsystem failure — falha na autenticação/validação de token. */
+export class AuthError extends ExceptionError {
+  constructor(message?: string, properties?: CustomErrorPartialProperties) {
+    const { data, userMessage } = properties ?? {};
+    super(message ?? "Erro de autenticação/validação de token", {
+      code: "AUTH_ERROR",
+      status: 500,
+      userMessage,
+      data,
+    });
+  }
+}
