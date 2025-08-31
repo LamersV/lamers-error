@@ -1,0 +1,41 @@
+{
+  "name": "@lamersv/error",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "LamersV",
+  "license": "MIT",
+  "publishConfig": {
+    "@lamersv:registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "yarn build",
+    "pub": "yarn publish --registry https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./types": {
+      "import": "./dist/types/index.d.ts",
+      "require": "./dist/types/index.d.ts",
+      "default": "./dist/types/index.d.ts",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LamersV/lamers-error.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LamersV/lamers-error/issues"
+  },
+  "homepage": "https://github.com/LamersV/lamers-error#readme"
+}
