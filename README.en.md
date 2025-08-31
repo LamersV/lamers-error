@@ -209,4 +209,4 @@ async function callGateway() {
 
 ## License
 
-MIT. See the license file in the official repository.
+MIT. See the license file in the official repository. [LICENSE](./LICENSE)
